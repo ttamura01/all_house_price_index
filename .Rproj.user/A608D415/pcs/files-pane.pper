@@ -1,0 +1,9 @@
+{
+    "path": "~/Documents/R_Computing/house_prices",
+    "sortOrder": [
+        {
+            "columnIndex": 2,
+            "ascending": true
+        }
+    ]
+}
