@@ -4,10 +4,11 @@ library(patchwork)
 library(glue)
 library(ggtext)
 library(ggrepel)
-setwd("/Users/takayukitamura/Documents/R_Computing")
+setwd("/Users/takayukitamura/Documents/R_Computing/all_house_price_index")
 
-house_px <- read.csv("/Users/takayukitamura/Documents/R_Computing/house_prices/house_px_2023_10.csv", sep = ",", 
-                     header = TRUE, stringsAsFactors = FALSE )
+house_px <- read.csv("house_px_2023_10.csv", sep = ",", 
+                     header = TRUE, stringsAsFactors = FALSE ) %>% 
+  select(-X)
 
 sapply(house_px, class)
 house_px$DATE <- as.Date(house_px$DATE)
@@ -40,9 +41,6 @@ house_px <- house_px %>%
 
 
 house_px %>% tail
-
-house_px <- house_px %>%
-  select(-X)
 
 longer_house_px <- house_px %>% 
   pivot_longer(cols = c(-DATE),
